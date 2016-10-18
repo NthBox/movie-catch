@@ -12,13 +12,19 @@
 
               <td>
                   <div ng-click='setSelectedMovie()'>
-                    <a href='#/movieDetails'>
+                    <a href='/#/details'>
                       <img src='https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}' />
                     </a>
                   </div>
                   <br>
-                    <h4>{{ movie.title }} | <span ng-click='addSelectedMovie()'>Add</span></h4>
-                    <h5>Release Date: {{ movie.release_date }}</h5><br>
+                    <h4 class='posterDesc'>
+                      <span>{{ movie.title }} </span> </h4>
+                      <h4 class='posterDesc'><span>Release Date: {{ movie.release_date }}</span></h4>
+                      <h4 class='posterDesc'>
+                        <!-- <span ng-click='addSelectedMovie()'>Add</span> | -->
+                        <span ng-click='smsSelectedMovie()'>Mobile Alert</span>
+                      </h4>
+                      <br>
               </td>
 
           </div>

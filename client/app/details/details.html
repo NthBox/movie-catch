@@ -12,13 +12,19 @@
           </a>
 
       <br>
-      <h4>{{ movie.title }} | <span ng-click='addSelectedMovie()'>Add</span></h4>
-      <h5>Release Date: {{ movie.release_date }}</h5><br>
+      <h4 class='posterDesc'>{{ movie.title }}
+      <!-- | <span ng-click='addSelectedMovie()'>Add</span> -->
+      </h4>
+      <h4 class='posterDesc'>Release Date: {{ movie.release_date }}</h4>
+      <h4 class='posterDesc'>
+        <span ng-click='addSelectedMovie()'>Add</span> |
+        <span ng-click='smsSelectedMovie()'>Mobile Alert</span>
+      </h4>
 
     </div>
     <div class="span8">
       <!--Body content-->
-      <h4>SUMMARY:<br>{{movie.overview}}</h4>
+      <h4 class='posterDesc'>SUMMARY:<br>{{movie.overview}}</h4>
     </div>
   </div>
 </div>

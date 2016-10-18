@@ -1,6 +1,6 @@
 angular.module('movieCatch.favorite', [])
 
-.controller('FavoriteController', function ($scope, Favorite) {
+.controller('FavoriteController', function ($scope, Favorite, Details, SMS) {
   $scope.movies = [];
   //for memory
   // $scope.movies = Favorite.list();
@@ -16,4 +16,19 @@ angular.module('movieCatch.favorite', [])
       console.error('error', error);
     });
 
+  $scope.setSelectedMovie = function (){
+    console.log('Selected Movie');
+    $scope.selected = this.movie;
+    var selectedMovie = $scope.selected;
+    console.log($scope.selected);
+    Details.setMovie(selectedMovie);
+  };
+
+  $scope.smsSelectedMovie = function (){
+    console.log('Selected Movie');
+    $scope.selected = this.movie;
+    var selectedMovie = $scope.selected;
+    console.log($scope.selected);
+    SMS.send(selectedMovie);
+  };
 });

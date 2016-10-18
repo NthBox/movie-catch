@@ -31,8 +31,15 @@ module.exports = {
   },
   listMovies: function(req,res){
     Fav.find({}, function(err, movies) {
-    console.log('db fav movies', movies);
-    res.send(movies);
-  });
+      console.log('db fav movies', movies);
+      res.send(movies);
+    });
+  },
+  dropCollection: function(req, res){
+    console.log('In dropCollection GET');
+    mongoose.connection.db.dropCollection('favorites', function(err, result) {
+        console.log('Collection Dropped', result);
+    });
+
   }
 };

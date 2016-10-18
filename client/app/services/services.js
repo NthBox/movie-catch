@@ -55,6 +55,15 @@ angular.module('movieCatch.services', [])
       return saved;
     });
   };
+  var drop = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/favorite/drop'
+    })
+    .then(function(resp){
+      return resp;
+    });
+  };
   return {catchit: catchit, list:list};
 
 })

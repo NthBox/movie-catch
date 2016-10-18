@@ -21,6 +21,9 @@ module.exports = function (app, express) {
   // app.get list of favorite movies
   app.get('/api/favorite', favoriteMoviesController.listMovies);
 
+  // app.get drop favorites
+  app.get('/api/favorite/drop', favoriteMoviesController.dropCollection);
+
   // app.post sms reminder
   app.post('/api/sms', smsReminderController.sendSMS);
 };
