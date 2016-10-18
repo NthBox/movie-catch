@@ -11,24 +11,24 @@ var client = require('twilio')(accountSid, authToken);
 
 module.exports = {
   sendSMS: function(req, res){
+    var movie = req.body.movie;
+    console.log('movie', movie);
+
+    var posterUrl = 'https://image.tmdb.org/t/p/w300/' +  movie.poster_path;
+    var movieTitle = movie.title;
+    var releaseDate = movie.release_date;
+
+    console.log('posterUrl', posterUrl, 'movieTitle', movieTitle, 'releaseDate', releaseDate);
+
     console.log('In sendSMS POST');
     client.messages.create({
       to: "+16022459516",
       from: "+16282222840",
-      body: "Movie Catch: This movie showing starts in 2 days!",
-      mediaUrl: "https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg",
+      body: "Movie Catch: " + movieTitle + " showing starts on " + releaseDate + '!',
+      mediaUrl: posterUrl,
     }, function(err, message) {
     console.log(message.sid);
     });
   }
 };
 
-// console.log('In server upcoming movie GET');
-//     request('https://api.themoviedb.org/3/movie/upcoming?api_key='
-//                + API.movieDB() + '&language=en-US', function (error, response, body) {
-//         if (!error && response.statusCode == 200) {
-//           list = JSON.parse(body);
-//           //console.log('list', list);
-//           res.json(list);
-//         };
-//     });
