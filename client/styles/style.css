@@ -14,6 +14,27 @@ video#bgvid {
   background-size: cover;
 
 }
+
+.titleWord1{
+  font-family: 'Bitter', serif;
+  color: white;
+  font-size: 35px;
+}
+
+.titleWord2{
+  font-family: 'Dancing Script', cursive;
+}
+
+.navLinks{
+  color: white;
+  font-size: 20px;
+}
+
+.posterDesc {
+  color: white;
+  font-size: 15px;
+}
+
 a {
   color: #333;
   font-size: 14px;

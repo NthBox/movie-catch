@@ -69,6 +69,6 @@ angular.module('movieCatch.services', [])
     return detailsData;
   };
   return {setMovie:setMovie, list:list};
-
 });
+
 

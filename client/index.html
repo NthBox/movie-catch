@@ -9,14 +9,17 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Dancing+Script" rel="stylesheet">
 
   </head>
   <body>
-    <div ng-controller="IndexController">
-        <h1>Movie Catch</h1>
-         <a href="/#/intro">Intro</a> |
-        <a href="/#/upcoming">Upcoming</a> |
-        <a href="/#/favorite">Favorites</a>
+    <div class='text-center' ng-controller="IndexController">
+        <h1 class='titleWord1'>Movie <span class='titleWord2'> Catch<span> </h1>
+        <span class='navLinks'>
+            <a class='navLinks' href="/#/intro">Intro</a> |
+            <a class='navLinks' href="/#/upcoming">Up Coming</a> |
+            <a class='navLinks' href="/#/favorite">Favorites</a>
+        </span>
     </div>
 
     <div ng-view></div>

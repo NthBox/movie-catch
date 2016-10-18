@@ -19,12 +19,12 @@ routes(app, express);
 
 
 //local
-// app.listen(serverPort);
-// console.log('Listing on localhost:' + serverPort);
+app.listen(serverPort);
+console.log('Listing on localhost:' + serverPort);
 
 // Start Server Heroku
-app.listen(process.env.PORT, function(){
-  console.log('listening on');
-});
+// app.listen(process.env.PORT, function(){
+//   console.log('listening on');
+// });
 
 module.exports = app;
