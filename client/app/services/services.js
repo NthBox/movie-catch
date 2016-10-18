@@ -69,6 +69,20 @@ angular.module('movieCatch.services', [])
     return detailsData;
   };
   return {setMovie:setMovie, list:list};
+})
+.factory('SMS', function ($http) {
+  var send = function(movie){
+    console.log('SMS send', movie);
+    return $http({
+      method: 'POST',
+      url: '/api/sms',
+      data: {movie:movie}
+    })
+    .then(function(resp){
+      return resp.data;
+    });
+  };
+  return {send: send};
 });
 
 

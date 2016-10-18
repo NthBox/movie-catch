@@ -1,6 +1,6 @@
 angular.module('movieCatch.upcoming', [])
 
-.controller('UpcomingController', function ($scope, Upcoming,Favorite, Details) {
+.controller('UpcomingController', function ($scope, Upcoming,Favorite, Details,SMS) {
   $scope.movies = {};
   Upcoming.list()
     .then(function(movies){
@@ -26,5 +26,13 @@ angular.module('movieCatch.upcoming', [])
     var selectedMovie = $scope.selected;
     console.log($scope.selected);
     Details.setMovie(selectedMovie);
+  };
+
+  $scope.smsSelectedMovie = function (){
+    console.log('Selected Movie');
+    $scope.selected = this.movie;
+    var selectedMovie = $scope.selected;
+    console.log($scope.selected);
+    SMS.send(selectedMovie);
   };
 });

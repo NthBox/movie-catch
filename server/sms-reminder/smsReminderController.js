@@ -11,6 +11,7 @@ var client = require('twilio')(accountSid, authToken);
 
 module.exports = {
   sendSMS: function(req, res){
+    console.log('In sendSMS POST');
     client.messages.create({
       to: "+16022459516",
       from: "+16282222840",
@@ -21,23 +22,6 @@ module.exports = {
     });
   }
 };
-
-// request({
-//     url: "https://api.blockcypher.com/v1/btc/test3/addrs",
-//     method: 'POST',
-//     headers: {'content-type' : 'application/json'},
-//     body: JSON.stringify(data),
-//     mediaUrl:
-//     }, function (error, response, body){
-//       var finalMultiSigAddress = JSON.parse(body);
-//       console.log('MultiSig Address Object');
-//       console.log(finalMultiSigAddress);
-//       console.log('New MultiSig Address Created');
-//       console.log(finalMultiSigAddress.address);
-//       callback(finalMultiSigAddress.address);
-//     }
-
-//   );
 
 // console.log('In server upcoming movie GET');
 //     request('https://api.themoviedb.org/3/movie/upcoming?api_key='
