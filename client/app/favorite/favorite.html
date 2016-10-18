@@ -1,0 +1,34 @@
+<div ng-controller="FavoriteController" id='container'>
+
+  <!-- Movie Listing Card -->
+
+<div class="row">
+    <div ng-repeat='movie in movies'>
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-md-4">
+        <div class="col-md-6 col-md-offset-2">
+          <div class='card'>
+            <div class='card-content'>
+
+              <td>
+                  <div ng-click='setSelectedMovie()'>
+                    <a href='#/movieDetails'>
+                      <img src='https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}' />
+                    </a>
+                  </div>
+                  <br>
+                    <h4>{{ movie.title }} | <span ng-click='addSelectedMovie()'>Add</span></h4>
+                    <h5>Release Date: {{ movie.release_date }}</h5><br>
+              </td>
+
+          </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+

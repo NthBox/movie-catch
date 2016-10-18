@@ -1,0 +1,27 @@
+<div ng-controller="DetailsController" id='container'>
+
+
+  <!-- Movie Listing Card -->
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <!--Sidebar content-->
+
+          <a href='#/movieDetails'>
+            <img src='https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}' />
+          </a>
+
+      <br>
+      <h4>{{ movie.title }} | <span ng-click='addSelectedMovie()'>Add</span></h4>
+      <h5>Release Date: {{ movie.release_date }}</h5><br>
+
+    </div>
+    <div class="span8">
+      <!--Body content-->
+      <h4>SUMMARY:<br>{{movie.overview}}</h4>
+    </div>
+  </div>
+</div>
+
+</div>
+

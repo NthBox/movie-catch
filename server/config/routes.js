@@ -1,0 +1,21 @@
+var upcomingMoviesController = require('../upcoming-movies/upcomingMoviesController.js');
+var favoriteMoviesController = require('../favorite-movies/favoriteMoviesController.js');
+var request = require('request');
+var  API = require('../config/api-services.js');
+
+module.exports = function (app, express) {
+
+
+  app.get('/',function(request, response){
+    console.log('Server Alive');
+    response.status(200).send('Server Alive');
+  });
+
+  // app.get upcoming movies
+  app.get('/api/upcoming-movies', upcomingMoviesController.listMovies);
+
+  // app.post add favorite movie
+  app.post('/api/favorite', favoriteMoviesController.favoriteMovie);
+  // app.get list of favorite movies
+  app.get('/api/favorite', favoriteMoviesController.listMovies);
+};
